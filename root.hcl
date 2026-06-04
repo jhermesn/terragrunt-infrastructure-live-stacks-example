@@ -36,7 +36,7 @@ remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "${get_env("EX_BUCKET_PREFIX", "")}terragrunt-example-tf-state-${local.account_name}-${local.aws_region}"
+    bucket         = "${get_env("BUCKET_PREFIX", "")}cantrill-a4l-tf-state-${local.account_name}-${local.aws_region}"
     key            = "${path_relative_to_include()}/tf.tfstate"
     region         = local.aws_region
     use_lockfile  = true
@@ -46,13 +46,3 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
 }
-
-# Configure what repositories to search when you run 'terragrunt catalog'
-catalog {
-  urls = [
-    "https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example",
-    "https://github.com/gruntwork-io/terraform-aws-utilities",
-    "https://github.com/gruntwork-io/terraform-kubernetes-namespace"
-  ]
-}
-
