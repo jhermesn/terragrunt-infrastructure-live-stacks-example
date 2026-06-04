@@ -11,7 +11,7 @@ dependency "key_pair" {
 }
 
 dependency "ssh_sg" {
-  config_path = "../../security-groups/ssh-access"
+  config_path = "../../security-groups/my-first-ec2-sg"
 
   mock_outputs_merge_strategy_with_state = "shallow"
   mock_outputs = {
