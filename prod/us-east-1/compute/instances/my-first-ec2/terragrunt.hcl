@@ -25,7 +25,7 @@ inputs = {
   ami                         = "ami-074bb5e3c681b0735" // AL2023
   instance_type               = "t3.micro"
   key_name                    = "a4l-prod"
-  subnet_id                   = "subnet-09e8a98162e9c544d" // Default
+  subnet_id                   = "subnet-09e8a98162e9c544d" // 1f
   vpc_security_group_ids      = [dependency.ssh_sg.outputs.security_group_id]
   associate_public_ip_address = true
 
