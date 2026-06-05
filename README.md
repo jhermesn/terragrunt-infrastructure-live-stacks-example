@@ -1,0 +1,1 @@
+Repository based off the Gruntwork live structure template for my studies on terraform, terragrunt and Adrian Cantrill's SAA course.
