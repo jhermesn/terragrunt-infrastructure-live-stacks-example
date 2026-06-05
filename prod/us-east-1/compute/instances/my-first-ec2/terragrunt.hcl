@@ -15,7 +15,7 @@ dependency "ssh_sg" {
 
   mock_outputs_merge_strategy_with_state = "shallow"
   mock_outputs = {
-    security_group_id = "sg-00000000000000000"
+    id = "sg-00000000000000000"
   }
 }
 
@@ -26,12 +26,13 @@ inputs = {
   instance_type               = "t3.micro"
   key_name                    = "a4l-prod"
   subnet_id                   = "subnet-09e8a98162e9c544d" // 1f
-  vpc_security_group_ids      = [dependency.ssh_sg.outputs.security_group_id]
+  create_security_group  = false
+  vpc_security_group_ids = [dependency.ssh_sg.outputs.id]
   associate_public_ip_address = true
 
   root_block_device = {
     type                  = "gp3"
-    size                  = 8
+    size                  = 30
     delete_on_termination = true
   }
 }
