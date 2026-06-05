@@ -29,11 +29,9 @@ inputs = {
   vpc_security_group_ids      = [dependency.ssh_sg.outputs.security_group_id]
   associate_public_ip_address = true
 
-  root_block_device = [
-    {
-      volume_type           = "gp3"
-      volume_size           = 8
-      delete_on_termination = true
-    }
-  ]
+  root_block_device = {
+    type                  = "gp3"
+    size                  = 8
+    delete_on_termination = true
+  }
 }
