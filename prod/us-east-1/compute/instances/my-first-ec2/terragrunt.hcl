@@ -6,8 +6,8 @@ include "root" {
   path = find_in_parent_folders("root.hcl")
 }
 
-dependency "key_pair" {
-  config_path = "../../key-pair"
+dependencies {
+  paths = ["../../key-pair"]
 }
 
 dependency "ssh_sg" {
