@@ -27,6 +27,13 @@ provider "aws" {
 
   # Only these AWS Account IDs may be operated on by this template
   allowed_account_ids = ["${local.account_id}"]
+
+  default_tags {
+    tags = {
+      Environment = "${local.account_name}"
+      ManagedBy   = "terragrunt"
+    }
+  }
 }
 EOF
 }
